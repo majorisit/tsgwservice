@@ -1,0 +1,48 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'idea'
+apply plugin: 'spring-boot' 
+apply plugin: 'war'
+
+war {
+    baseName = 'spring-boot-jsp-sample'
+    version = '0.0.1-SNAPSHOT'
+}
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+configurations {
+    providedRuntime
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-devtools') 
+    compile('javax.servlet:jstl')
+	compile('net.sf.opencsv:opencsv:2.3')    
+	compile('net.sourceforge.barbecue:barbecue:1.5-beta1')
+	compile('javax.mail:mail:1.4.7')
+    compile('org.freemarker:freemarker:2.3.23')
+    compile('org.springframework:spring-context-support:4.1.6.RELEASE')    
+    providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+    providedRuntime('org.apache.tomcat.embed:tomcat-embed-jasper')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    
+}
