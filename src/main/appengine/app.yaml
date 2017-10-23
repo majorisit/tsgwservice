@@ -1,9 +1,6 @@
-env: flex
 runtime: java
-service: springboot
+env: flex
 
-health_check:
-  enable_health_check: False
-
-manual_scaling:
-  instances: 1
+handlers:
+- url: /.*
+  script: this field is required, but ignored
