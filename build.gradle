@@ -35,6 +35,12 @@ configurations {
 }
 
 appengine {
+
+  deploy {
+    stopPreviousVersion = true
+    promote = true
+  }
+  
    stage {
      appEngineDirectory = "${project.projectDir}/src/main/appengine"
    }
