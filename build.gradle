@@ -34,6 +34,12 @@ configurations {
     providedRuntime
 }
 
+appengine {
+   stage {
+     appEngineDirectory = "${project.projectDir}/src/main/appengine"
+   }
+}
+
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-devtools') 
