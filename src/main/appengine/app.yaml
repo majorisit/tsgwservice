@@ -1,19 +1,12 @@
 runtime: java
 env: flex
 
-runtime_config:
-    jdk: openjdk8
+runtime_config:  # Optional
+  jdk: openjdk8
 
-health_check:
-  enable_health_check: True
-  check_interval_sec: 5
-  timeout_sec: 4
-  unhealthy_threshold: 2
-  healthy_threshold: 2
-  
-resources:
-    cpu: 1
-    memory_gb: 2.3
+handlers:
+- url: /.*
+  script: this field is required, but ignored
 
 manual_scaling:
-    instances: 1
+  instances: 1
