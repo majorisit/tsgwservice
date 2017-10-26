@@ -34,6 +34,7 @@ configurations {
     providedRuntime
 }
 
+
 /**
 appengine {
 
@@ -47,6 +48,7 @@ appengine {
    }
 }
 */
+
 
 dependencies {
 	compile group: 'com.google.cloud.sql', name: 'mysql-socket-factory', version: '1.0.0-beta1'
