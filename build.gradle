@@ -7,13 +7,16 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+//		classpath("com.google.cloud.tools:appengine-gradle-plugin:1.3.0")		
 	}
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'idea'
+apply plugin: 'spring-boot' 
 apply plugin: 'war'
-apply plugin: 'org.springframework.boot' 
+// apply plugin: 'com.google.cloud.tools.appengine'
 
 war {
     baseName = 'greenfrontdesk'
@@ -31,13 +34,34 @@ configurations {
     providedRuntime
 }
 
+/**
+appengine {
+
+  deploy {
+    stopPreviousVersion = true
+    promote = true
+  }
+  
+   stage {
+     appEngineDirectory = "${project.projectDir}/src/main/appengine"
+   }
+}
+*/
+
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web') 
+	compile group: 'com.google.cloud.sql', name: 'mysql-socket-factory', version: '1.0.0-beta1'
+//	compile('com.google.cloud.sql:mysql-socket-factory-connector-j-6:1.0.2')
+	compile('mysql:mysql-connector-java:5.1.40')
+    compile('org.springframework.boot:spring-boot-starter-web')
+     compile('org.springframework.boot:spring-boot-devtools') 
     compile('javax.servlet:jstl')
 	compile('net.sf.opencsv:opencsv:2.3')    
 	compile('net.sourceforge.barbecue:barbecue:1.5-beta1')
 	compile('javax.mail:mail:1.4.7')
     compile('org.freemarker:freemarker:2.3.23')
-    compile('org.springframework:spring-context-support:4.1.6.RELEASE')
-	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')        
+    compile('org.springframework:spring-context-support:4.1.6.RELEASE')    
+    providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+    providedRuntime('org.apache.tomcat.embed:tomcat-embed-jasper')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    
 }

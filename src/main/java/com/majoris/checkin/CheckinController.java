@@ -5,6 +5,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -43,6 +47,28 @@ import net.sourceforge.barbecue.BarcodeImageHandler;
 
 @Controller
 public class CheckinController {
+
+	static {
+		System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<< MQSQL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>");		
+		String jdbcUrl = String.format(
+				"jdbc:mysql://google/%s?cloudSqlInstance=%s&"
+						+ "socketFactory=com.google.cloud.sql.mysql.SocketFactory",
+				"greenfrontdeskdb", "greenfrontdesk-184123:us-central1:greenfrontdeskins");
+
+		Connection connection;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");			
+			connection = DriverManager.getConnection(jdbcUrl, "root", "root");
+			try (Statement statement = connection.createStatement()) {
+				ResultSet resultSet = statement.executeQuery("SHOW TABLES");
+				while (resultSet.next()) {
+					System.out.println("Show Tables ->" + resultSet.getString(1));
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	private static final String MEMBER_RECORD_NOT_FOUND = "Member Record Not Found";
 	private static final String CHECK_IN = "Check-In";
@@ -238,9 +264,9 @@ public class CheckinController {
 		mapping.put("Since", "since");
 		mapping.put("Type", "type");
 		mapping.put("Veg", "veg");
-		mapping.put("VegAmount", "vegAmount");		
+		mapping.put("VegAmount", "vegAmount");
 		mapping.put("NonVeg", "nonVeg");
-		mapping.put("NonVegAmount", "nonVegAmount");		
+		mapping.put("NonVegAmount", "nonVegAmount");
 		mapping.put("Kids", "kids");
 		strategy.setColumnMapping(mapping);
 		return strategy;
