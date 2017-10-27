@@ -49,11 +49,10 @@ appengine {
 }
 */
 
-
 dependencies {
-	compile group: 'com.google.cloud.sql', name: 'mysql-socket-factory', version: '1.0.0-beta1'
+	compile group: 'com.google.cloud.sql', name: 'mysql-socket-factory', version: '1.0.4'
 //	compile('com.google.cloud.sql:mysql-socket-factory-connector-j-6:1.0.2')
-	compile('mysql:mysql-connector-java:5.1.40')
+	compile('mysql:mysql-connector-java:5.1.42')
     compile('org.springframework.boot:spring-boot-starter-web')
      compile('org.springframework.boot:spring-boot-devtools') 
     compile('javax.servlet:jstl')
