@@ -66,7 +66,7 @@ public class CheckinController {
 				}
 			}
 		} catch (Exception e) {
-			System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<< MQSQL - EXCEPTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>");				
+			System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<< MQSQL - EXCEPTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + e.getMessage());				
 			e.printStackTrace();
 		}
 		System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<< MQSQL - END >>>>>>>>>>>>>>>>>>>>>>>>>>>>>");			
