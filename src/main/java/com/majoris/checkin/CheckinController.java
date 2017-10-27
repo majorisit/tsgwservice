@@ -53,7 +53,7 @@ public class CheckinController {
 		String jdbcUrl = String.format(
 				"jdbc:mysql://google/%s?cloudSqlInstance=%s&"
 						+ "socketFactory=com.google.cloud.sql.mysql.SocketFactory",
-				"greenfrontdeskdb", "greenfrontdesk-184123:us-central1:greenfrontdeskins");
+				"greenfrondeskdb", "greenfrontdesk-184123:us-central1:greenfrontdeskins");
 
 		Connection connection;
 		try {
