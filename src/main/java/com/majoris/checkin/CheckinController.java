@@ -66,8 +66,10 @@ public class CheckinController {
 				}
 			}
 		} catch (Exception e) {
+			System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<< MQSQL - EXCEPTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>");				
 			e.printStackTrace();
 		}
+		System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<< MQSQL - END >>>>>>>>>>>>>>>>>>>>>>>>>>>>>");			
 	}
 
 	private static final String MEMBER_RECORD_NOT_FOUND = "Member Record Not Found";
