@@ -50,7 +50,8 @@ appengine {
 */
 
 dependencies {
-	compile group: 'com.google.cloud.sql', name: 'mysql-socket-factory', version: '1.0.4'
+	compile('org.springframework.boot:spring-boot-starter-jdbc:1.5.8.RELEASE')
+	compile('com.google.cloud.sql:mysql-socket-factory:1.0.4')
 //	compile('com.google.cloud.sql:mysql-socket-factory-connector-j-6:1.0.2')
 	compile('mysql:mysql-connector-java:5.1.42')
     compile('org.springframework.boot:spring-boot-starter-web')
@@ -64,5 +65,4 @@ dependencies {
     providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
     providedRuntime('org.apache.tomcat.embed:tomcat-embed-jasper')
     testCompile('org.springframework.boot:spring-boot-starter-test')
-    
 }
