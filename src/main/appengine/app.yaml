@@ -1,6 +1,6 @@
 runtime: java
 env: flex
-service: greenfrontdesk
+# service: greenfrontdesk
 
 runtime_config:  # Optional
   jdk: openjdk8
