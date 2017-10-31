@@ -33,8 +33,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.majoris.checkin.dao.EventMasterDao;
-
 import au.com.bytecode.opencsv.CSVReader;
 import au.com.bytecode.opencsv.CSVWriter;
 import au.com.bytecode.opencsv.bean.CsvToBean;
@@ -45,30 +43,6 @@ import net.sourceforge.barbecue.BarcodeImageHandler;
 
 @Controller
 public class CheckinController {
-
-	static {
-		System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<< MQSQL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>");		
-//		String jdbcUrl = String.format(
-//				"jdbc:mysql://google/%s?cloudSqlInstance=%s&"
-//						+ "socketFactory=com.google.cloud.sql.mysql.SocketFactory",
-//				"greenfrondeskdb", "greenfrontdesk-184123:us-central1:greenfrontdeskins");
-//
-//		Connection connection;
-//		try {
-//			Class.forName("com.mysql.jdbc.Driver");			
-//			connection = DriverManager.getConnection(jdbcUrl, "root", "root");
-//			try (Statement statement = connection.createStatement()) {
-//				ResultSet resultSet = statement.executeQuery("SHOW TABLES");
-//				while (resultSet.next()) {
-//					System.out.println("Show Tables ->" + resultSet.getString(1));
-//				}
-//			}
-//		} catch (Exception e) {
-//			System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<< MQSQL - EXCEPTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + e.getMessage());				
-//			e.printStackTrace();
-//		}
-//		System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<< MQSQL - END >>>>>>>>>>>>>>>>>>>>>>>>>>>>>");			
-	}
 
 	private static final String MEMBER_RECORD_NOT_FOUND = "Member Record Not Found";
 	private static final String CHECK_IN = "Check-In";
@@ -87,9 +61,6 @@ public class CheckinController {
 	 */
 	@Autowired
 	private JavaMailSender mailSender;
-	
-	@Autowired
-	private EventMasterDao eventMasterDao;
 	/**
 	 * Freemarker template file
 	 */
@@ -97,7 +68,6 @@ public class CheckinController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index() {
-//		eventMasterDao.findEventMasterById("1");
 		System.out.println("*********************** Inside Index!!!");
 		return "index";
 	}
