@@ -97,7 +97,7 @@ public class CheckinController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index() {
-		eventMasterDao.findEventMasterById("1");
+//		eventMasterDao.findEventMasterById("1");
 		System.out.println("*********************** Inside Index!!!");
 		return "index";
 	}
