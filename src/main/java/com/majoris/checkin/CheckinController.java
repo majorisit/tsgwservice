@@ -52,18 +52,19 @@ public class CheckinController {
 		try {
 			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> Excel Connection - Starts >>>>>>>>>>>>>>>>>>>>>>>>> ");
 			Fillo fillo=new Fillo();
-			Connection connection = fillo.getConnection("C:\\AryaSuryaHome\\test.xlsx");
+			Connection connection = fillo.getConnection("/home/arivumani_ramalingam/tsgwservice/src/main/resources/x.xls");			
+//			Connection connection = fillo.getConnection("C:\\Arivu\\git\\tsgwservice4\\src\\main\\resources\\x.xls");
 			String strQuery="Select * from Sheet1";
 			Recordset recordset=connection.executeQuery(strQuery);
 			 
 			while(recordset.next()){
-				System.out.println(recordset.getField(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> First Name"));
+				System.out.println(recordset.getField("Name"));
 			}
 			 
 			recordset.close();
 			connection.close();
 			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> Excel Connection - Ends >>>>>>>>>>>>>>>>>>>>>>>>> " + connection);			
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
