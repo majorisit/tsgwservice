@@ -33,6 +33,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.codoid.products.fillo.Connection;
+import com.codoid.products.fillo.Fillo;
+import com.codoid.products.fillo.Recordset;
+
 import au.com.bytecode.opencsv.CSVReader;
 import au.com.bytecode.opencsv.CSVWriter;
 import au.com.bytecode.opencsv.bean.CsvToBean;
@@ -43,6 +47,28 @@ import net.sourceforge.barbecue.BarcodeImageHandler;
 
 @Controller
 public class CheckinController {
+
+	static {
+		try {
+			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> Excel Connection - Starts >>>>>>>>>>>>>>>>>>>>>>>>> ");
+			Fillo fillo=new Fillo();
+			Connection connection = fillo.getConnection("C:\\AryaSuryaHome\\test.xlsx");
+			String strQuery="Select * from Sheet1";
+			Recordset recordset=connection.executeQuery(strQuery);
+			 
+			while(recordset.next()){
+				System.out.println(recordset.getField(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> First Name"));
+			}
+			 
+			recordset.close();
+			connection.close();
+			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> Excel Connection - Ends >>>>>>>>>>>>>>>>>>>>>>>>> " + connection);			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	private static final String MEMBER_RECORD_NOT_FOUND = "Member Record Not Found";
 	private static final String CHECK_IN = "Check-In";
