@@ -33,10 +33,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.codoid.products.fillo.Connection;
-import com.codoid.products.fillo.Fillo;
-import com.codoid.products.fillo.Recordset;
-
 import au.com.bytecode.opencsv.CSVReader;
 import au.com.bytecode.opencsv.CSVWriter;
 import au.com.bytecode.opencsv.bean.CsvToBean;
@@ -47,29 +43,6 @@ import net.sourceforge.barbecue.BarcodeImageHandler;
 
 @Controller
 public class CheckinController {
-
-	static {
-		try {
-			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> Excel Connection - Starts >>>>>>>>>>>>>>>>>>>>>>>>> ");
-			Fillo fillo=new Fillo();
-			Connection connection = fillo.getConnection("/home/arivumani_ramalingam/tsgwservice/src/main/resources/x.xls");			
-//			Connection connection = fillo.getConnection("C:\\Arivu\\git\\tsgwservice4\\src\\main\\resources\\x.xls");
-			String strQuery="Select * from Sheet1";
-			Recordset recordset=connection.executeQuery(strQuery);
-			 
-			while(recordset.next()){
-				System.out.println(recordset.getField("Name"));
-			}
-			 
-			recordset.close();
-			connection.close();
-			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> Excel Connection - Ends >>>>>>>>>>>>>>>>>>>>>>>>> " + connection);			
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 
 	private static final String MEMBER_RECORD_NOT_FOUND = "Member Record Not Found";
 	private static final String CHECK_IN = "Check-In";
@@ -82,6 +55,8 @@ public class CheckinController {
 	 * Free Marker template configuration
 	 */
 	@Autowired
+	
+	
 	private Configuration freemarkerConfiguration;
 	/**
 	 * Spring mail sender component.
@@ -94,7 +69,7 @@ public class CheckinController {
 	private static final String FREEMARKER_TEMPLATE_FILE = "/barcode_email.ftl";
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String index() {
+	public String index() throws Exception {
 		System.out.println("*********************** Inside Index!!!");
 		return "index";
 	}

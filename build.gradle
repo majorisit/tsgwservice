@@ -49,7 +49,7 @@ appengine {
 */
 
 dependencies {
-	compile 'com.codoid.products:fillo:1.16'
+	compile group: 'net.sourceforge.csvjdbc', name: 'csvjdbc', version: '1.0.28'
     providedCompile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-devtools') 
     compile('javax.servlet:jstl')

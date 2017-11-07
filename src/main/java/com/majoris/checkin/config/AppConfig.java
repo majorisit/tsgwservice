@@ -1,6 +1,8 @@
-package com.majoris.checkin;
+package com.majoris.checkin.config;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.Properties;
 
 import org.springframework.context.annotation.Bean;
@@ -18,6 +20,29 @@ import freemarker.template.TemplateException;
  */
 @org.springframework.context.annotation.Configuration
 public class AppConfig {
+
+	private static Connection connection = null;
+
+	public static Connection getConnection() throws Exception {
+		try {
+			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> Excel Connection - Starts >>>>>>>>>>>>>>>>>>>>>>>>> ");
+			Class.forName("org.relique.jdbc.csv.CsvDriver");			
+			if (connection == null) {
+					// connection =
+				// fillo.getConnection("/home/arivumani_ramalingam/tsgwservice/src/main/resources/x.xls");
+				// Connection connection =
+				// fillo.getConnection("C:\\Arivu\\git\\tsgwservice4\\src\\main\\resources\\x.xls");
+				connection = DriverManager.getConnection("jdbc:relique:csv:C:\\Users\\SuryaArya\\git\\tsgwservice\\src\\main\\resources\\");
+//				connection = fillo.getConnection("C:\\Users\\SuryaArya\\git\\tsgwservice\\src\\main\\resources\\ActiveMembers1.xls");
+				System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> Excel Connection - Ends >>>>>>>>>>>>>>>>>>>>>>>>> "
+						+ connection);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return connection;
+	}
+
 	@Bean
 	public JavaMailSender javaMailSender() {
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
