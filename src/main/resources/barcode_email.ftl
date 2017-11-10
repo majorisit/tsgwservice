@@ -16,7 +16,7 @@
 	    <td width="80%" align="right">
 	    	<b>
 	    	<font size="6" color="#ef0707">
-	    		Muththamizh Vizhaa 2017
+	    		Children's Day 2017
 	    	</font>
 			<br>
 			<i>
@@ -61,7 +61,7 @@
 	<tr>
 		<td align="center">
 			<font size="3">
-				<b>Chief Guest</b><br/>Tamil Movie Director, Writer & Actor&nbsp;<b>Mr. Mysskin<b>
+				<b>Chief Guest</b><br/><b>Mr. Jonathan Ripley,</b>&nbsp;&nbsp;Tamil Preceptor at Harvard University&nbsp;
 			</font>
 		</td>
 	</tr>
@@ -81,18 +81,18 @@
 	<tr>
 		<td align="center">
 			<font size="3">
-				<b>Date:</b>&nbsp;&nbsp;&nbsp;Sunday, 07/09/2017
+				<b>Date:</b>&nbsp;&nbsp;&nbsp;Saturday, November 11, 2017
 			</font>
 		</td>
 	</tr>
 	<tr>
 		<td align="center">
 			<font size="3">
-				<b>Time:</b>&nbsp;&nbsp;&nbsp;12:00 PM - 7:00 PM
+				<b>Time:</b>&nbsp;&nbsp;&nbsp;3:00 PM - 9:00 PM
 			</font>
 		</td>
-	</tr>	
-	</tbody> 
+	</tr>
+	</tbody>
 	</table>
 			
 	<table width="100%" bgcolor="green" cellpadding="0.5" style="border:0.5px">

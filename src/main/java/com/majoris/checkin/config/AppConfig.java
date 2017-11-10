@@ -65,7 +65,6 @@ public class AppConfig {
 		factoryBean.setPreferFileSystemAccess(false);
 		factoryBean.setTemplateLoaderPath("classpath:/");
 		factoryBean.afterPropertiesSet();
-		System.out.println();
 		return factoryBean.getObject();
 	}
 }
