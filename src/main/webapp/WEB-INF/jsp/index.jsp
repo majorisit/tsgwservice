@@ -28,11 +28,11 @@
 			</tr>
 		</table>
 	</form>
-	<br/><br/>
+	<br/>
 	<div id="container" style="height: 250px; background: white"></div>
 
 	<div id="gogreen">
-		<table width="100%" height="50px" bgcolor="green" cellspacing="0"
+		<table width="100%" height="40px" bgcolor="green" cellspacing="0"
 			cellpadding="0" style="border-spacing: 0px">
 			<tr>
 				<td width="80%"><font color="white" size="10"><strong>TSGW

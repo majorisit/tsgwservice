@@ -21,26 +21,17 @@ import freemarker.template.TemplateException;
 @org.springframework.context.annotation.Configuration
 public class AppConfig {
 
-	private static Connection connection = null;
-
 	public static Connection getConnection() throws Exception {
 		try {
-			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> Excel Connection - Starts >>>>>>>>>>>>>>>>>>>>>>>>> ");
-			Class.forName("org.relique.jdbc.csv.CsvDriver");			
-			if (connection == null) {
-					// connection =
-				// fillo.getConnection("/home/arivumani_ramalingam/tsgwservice/src/main/resources/x.xls");
-				// Connection connection =
-				// fillo.getConnection("C:\\Arivu\\git\\tsgwservice4\\src\\main\\resources\\x.xls");
-				connection = DriverManager.getConnection("jdbc:relique:csv:C:\\Users\\SuryaArya\\git\\tsgwservice\\src\\main\\resources\\");
-//				connection = fillo.getConnection("C:\\Users\\SuryaArya\\git\\tsgwservice\\src\\main\\resources\\ActiveMembers1.xls");
-				System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> Excel Connection - Ends >>>>>>>>>>>>>>>>>>>>>>>>> "
-						+ connection);
-			}
+			// db parameters
+			Class.forName("org.sqlite.JDBC");
+			String url = "jdbc:sqlite:C://sqllite//test.db";
+			// create a connection to the database
+			return DriverManager.getConnection(url);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return connection;
+		return null;
 	}
 
 	@Bean
@@ -54,8 +45,8 @@ public class AppConfig {
 		mailSender.setHost("smtp.gmail.com");
 		mailSender.setPort(Integer.parseInt("587"));
 		// mailSender.setProtocol(env.getProperty("spring.mail.protocol"));
-		mailSender.setUsername("washingtontamilsangam1@gmail.com");
-		mailSender.setPassword("kuzhu_1$");
+		mailSender.setUsername("washingtontamilsangam4@gmail.com");
+		mailSender.setPassword("kuzhu_4$");
 		return mailSender;
 	}
 

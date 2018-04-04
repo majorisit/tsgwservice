@@ -33,14 +33,27 @@ public class MemberCsv implements Serializable {
 	private String zipCode;
 	private String country;
 	private String type;
-	private String since;
+	private String year;
 	private String veg;
 	private String nonVeg;
 	private String vegAmount;
 	private String nonVegAmount;	
 	private String kids;
-
-	private String labelCheckIn;
+	private String checkedOut;
+	
+	private String addressChanged;
+	private String thendralMullai;
+	private String numberOfWristbands;
+	private String breakfastTotal;
+	private String breakfastIssued;
+	private String lunchVegTotal;
+	private String lunchVegIssued;
+	private String lunchNonVegTotal;
+	private String lunchNonVegIssued;
+	private String dinnerVegTotal;
+	private String dinnerVegIssued;
+	private String dinnerNonVegTotal;
+	private String dinnerNonVegIssued;	
 
 	public String getMemeberId() {
 		return memeberId;
@@ -154,13 +167,6 @@ public class MemberCsv implements Serializable {
 		this.type = type;
 	}
 
-	public String getSince() {
-		return since;
-	}
-
-	public void setSince(String since) {
-		this.since = since;
-	}
 
 	public String getVeg() {
 		return StringUtils.isEmpty(veg) ? "0" : veg;
@@ -176,14 +182,6 @@ public class MemberCsv implements Serializable {
 
 	public void setNonVeg(String nonVeg) {
 		this.nonVeg = nonVeg;
-	}
-
-	public String getLabelCheckIn() {
-		return labelCheckIn;
-	}
-
-	public void setLabelCheckIn(String labelCheckIn) {
-		this.labelCheckIn = labelCheckIn;
 	}
 
 	public String getSpouseFirstName() {
@@ -240,6 +238,126 @@ public class MemberCsv implements Serializable {
 
 	public void setNonVegAmount(String nonVegAmount) {
 		this.nonVegAmount = nonVegAmount;
+	}
+
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
+	}
+
+	public String getThendralMullai() {
+		return thendralMullai;
+	}
+
+	public void setThendralMullai(String thendralMullai) {
+		this.thendralMullai = thendralMullai;
+	}
+
+	public String getNumberOfWristbands() {
+		return numberOfWristbands;
+	}
+
+	public void setNumberOfWristbands(String numberOfWristbands) {
+		this.numberOfWristbands = numberOfWristbands;
+	}
+
+	public String getBreakfastTotal() {
+		return breakfastTotal;
+	}
+
+	public void setBreakfastTotal(String breakfastTotal) {
+		this.breakfastTotal = breakfastTotal;
+	}
+
+	public String getBreakfastIssued() {
+		return breakfastIssued;
+	}
+
+	public void setBreakfastIssued(String breakfastIssued) {
+		this.breakfastIssued = breakfastIssued;
+	}
+
+	public String getLunchVegTotal() {
+		return lunchVegTotal;
+	}
+
+	public void setLunchVegTotal(String lunchVegTotal) {
+		this.lunchVegTotal = lunchVegTotal;
+	}
+
+	public String getLunchVegIssued() {
+		return lunchVegIssued;
+	}
+
+	public void setLunchVegIssued(String lunchVegIssued) {
+		this.lunchVegIssued = lunchVegIssued;
+	}
+
+	public String getLunchNonVegTotal() {
+		return lunchNonVegTotal;
+	}
+
+	public void setLunchNonVegTotal(String lunchNonVegTotal) {
+		this.lunchNonVegTotal = lunchNonVegTotal;
+	}
+
+	public String getLunchNonVegIssued() {
+		return lunchNonVegIssued;
+	}
+
+	public void setLunchNonVegIssued(String lunchNonVegIssued) {
+		this.lunchNonVegIssued = lunchNonVegIssued;
+	}
+
+	public String getDinnerVegTotal() {
+		return dinnerVegTotal;
+	}
+
+	public void setDinnerVegTotal(String dinnerVegTotal) {
+		this.dinnerVegTotal = dinnerVegTotal;
+	}
+
+	public String getDinnerVegIssued() {
+		return dinnerVegIssued;
+	}
+
+	public void setDinnerVegIssued(String dinnerVegIssued) {
+		this.dinnerVegIssued = dinnerVegIssued;
+	}
+
+	public String getDinnerNonVegTotal() {
+		return dinnerNonVegTotal;
+	}
+
+	public void setDinnerNonVegTotal(String dinnerNonVegTotal) {
+		this.dinnerNonVegTotal = dinnerNonVegTotal;
+	}
+
+	public String getDinnerNonVegIssued() {
+		return dinnerNonVegIssued;
+	}
+
+	public void setDinnerNonVegIssued(String dinnerNonVegIssued) {
+		this.dinnerNonVegIssued = dinnerNonVegIssued;
+	}
+
+	public String getAddressChanged() {
+		return addressChanged;
+	}
+
+	public void setAddressChanged(String addressChanged) {
+		this.addressChanged = addressChanged;
+	}
+
+	public String getCheckedOut() {
+		return checkedOut;
+	}
+
+	public void setCheckedOut(String checkedOut) {
+		this.checkedOut = checkedOut;
 	}
 
 }
